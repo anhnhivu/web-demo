@@ -1,7 +1,0 @@
-Main Page
-    - Submit a photo -> save it in Firebase
-    - Choose a city -> return crs
-
-Result Page
-    - Input: (x,y)
-    - Show a Google Map street view
