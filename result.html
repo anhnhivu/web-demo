@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Result</title>
+
+        <style>
+            h3 {
+                text-align: center;
+            }
+
+            #map {
+              width: 80%;
+              height: 400px;
+              margin: auto;
+            }
+          </style>
+
+    </head>
+
+    <body>
+        <div class="jumbotron text-center">
+            <h1>PROJECT DEMO</h1>
+            <p>Kết quả nhận diện</p>
+          </div>
+
+        <h3>My Google Maps Demo</h3>
+        <!--The div element for the map -->
+        <div id="map"></div>
+
+
+        <script>
+            // Initialize and add the map
+            function initMap() {
+              // The location of Uluru
+              var uluru = {lat: -25.344, lng: 131.036};
+              // The map, centered at Uluru
+              var map = new google.maps.Map(
+                  document.getElementById('map'), {zoom: 4, center: uluru});
+              // The marker, positioned at Uluru
+              var marker = new google.maps.Marker({position: uluru, map: map});
+            }
+                </script>
+                <script defer
+                src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+                </script>
+
+
+        <footer class="page-footer font-small blue pt-4">
+            <div class="footer-copyright text-center py-3">© 2020 Copyright
+              </div>
+        </footer>
+
+    </body>
+</html>
