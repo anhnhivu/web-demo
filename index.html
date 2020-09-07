@@ -1,99 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <title> Home Page </title>
-        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="task.js"></script>
+        <title>Page</title>
+
+        <style>
+          .submitform {
+            border-style: 5px solid;
+            border-radius: 2.5px;
+            background-color: #f7f7f7;
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+          }
+
+          .image-preview {
+            margin: auto;
+            margin-bottom: 10%;
+            width: 300px;
+            min-height: 100px;
+            border: 2px solid #dddddd;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #cccccc;
+          }
+
+          .image-preview__image {
+            display: none;
+            width: 100%;
+          }
+
+          .choose {
+            color: white;
+            padding: 5px;
+            border-radius: 2.5px;
+            font-weight: bold;
+
+            display: flex;
+            margin:auto;
+            margin-top: 0%;
+            width: 300px;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .submitbutton {
+              margin-left: 35%;
+              width: 30%;
+              margin-bottom: 10%;
+          }
+
+          .city {
+              text-align: center;
+              margin: auto;
+          }
+        </style>
     </head>
 
     <body>
-        <h1 id="hello">Hello</h1>
+        <div class="jumbotron text-center">
+            <h1>PROJECT DEMO</h1>
+            <p>Demo bài toán nhận diện sổ hồng</p>
+        </div>
+
+            <div class="submitform">
+                <p style="text-align: center; color: #f7f7f7;">
+                    .
+                </p>
+                <label for="inpFile" class="choose btn-primary"> Chọn hình ảnh </label>
+                <input type="file" style="visibility:hidden;" id="inpFile" name="inpFile" accept="image/*">
+              
+                <div class="image-preview" id="imagePreview">
+                    <img src="" alt="Image Preview" class="image-preview__image">
+                    <span class="image-preview__default-text">Image Preview</span>
+                </div> 
 
 
-        <!-- FORM action="/action_page.php" -->
-        <form onsubmit="greet();return false;">
-            <!-- Select an image to submit -->
-            <div>
-                <label for="img">Select image:</label>
-                <input type="file" id="img" name="img" accept="image/*">
-                <p></p>
+                <div class="city">
+                    <label for="crs">Chọn tỉnh thành: </label>
+
+                    <select id="crs" name="crs">
+                        <option hidden disabled selected value></option>
+                        <option value="9210">Thành phố Hồ Chí Minh</option>
+                        <option value="9206">Điện Biên</option>
+                        <option value="9205">Lai Châu</option>
+                        <option value="9205">Sơn La</option>
+                        <option value="9207">Cà Mau</option>
+                        <option value="9207">Kiên Giang</option>
+                        <option value="9208">An Giang</option>
+                        <option value="9208">Lào Cai</option>
+                        <option value="9208">Nghệ An</option>
+                        <option value="9208">Phú Thọ</option>
+                        <option value="9208">Yên Bái</option>
+                        <option value="5897">Bạc Liêu</option>
+                        <option value="5897">Cần Thơ</option>
+                        <option value="5897">Đồng Tháp</option>
+                        <option value="5897">Hà Nam</option>
+                        <option value="5897">Hà Nội</option>
+                        <option value="5898">Hậu Giang</option>
+                        <option value="5897">Ninh Bình</option>
+                        <option value="5897">Thanh Hoá</option>
+                        <option value="5897">Vĩnh Phúc</option>
+                        <option value="9209">Bắc Ninh</option>
+                        <option value="9209">Hà Giang</option>
+                        <option value="9209">Hà Tĩnh</option>
+                        <option value="9209">Hải Dương</option>
+                        <option value="9209">Nam Định</option>
+                        <option value="9209">Sóc Trăng</option>
+                        <option value="9209">Tây Ninh</option>
+                        <option value="9209">Thái Bình</option>
+                        <option value="9209">Hưng Yên</option>
+                        <option value="9209">Trà Vinh</option>
+                        <option value="9209">Vĩnh Long</option>
+                        <option value="9210">Bến Tre</option>
+                        <option value="9210">Bình Dương</option>
+                        <option value="9210">Cao Bằng</option>
+                        <option value="9210">Hải Phòng</option>
+                        <option value="9210">Long An</option>
+                        <option value="9210">Tiền Giang</option>
+                        <option value="9211">Hoà Bình</option>
+                        <option value="9211">Quảng Bình</option>
+                        <option value="9211">Tuyên Quang</option>
+                        <option value="9212">Bình Phước</option>
+                        <option value="9212">Quảng Trị</option>
+                        <option value="9213">Bắc Kạn</option>
+                        <option value="9213">Thái Nguyên</option>
+                        <option value="9214">Bắc Giang</option>
+                        <option value="9214">Thừa Thiên Huế</option>
+                        <option value="9215">Lạng Sơn</option>
+                        <option value="9216">Kon Tum</option>
+                        <option value="5899">Bà Rịa - Vũng Tàu</option>
+                        <option value="5899">Đà Nẵng</option>
+                        <option value="5899">Đồng Nai</option>
+                        <option value="5899">Lâm Đồng</option>
+                        <option value="5899">Quảng Nam</option>
+                        <option value="5899">Quảng Ninh</option>
+                        <option value="5898">Quảng Ngãi</option>
+                        <option value="9217">Bình Định</option>
+                        <option value="9217">Khánh Hoà</option>
+                        <option value="9217">Ninh Thuận</option>
+                        <option value="9218">Phú Yên</option>
+                        <option value="9218">Bình Thuận</option>
+                        <option value="9218">Đắk Lắk</option>
+                        <option value="9218">Đắk Nông</option>
+                        <option value="9218">Gia Lai</option>
+                    </select>
+                </div>
+
+                
+            <button type="button" class="btn btn-primary submitbutton">Submit</button>
+                   
             </div>
-            
-            
-            <!-- Choose a city name -->
-        <div>    
-            <label for="crs" >Choose a city: </label>
-            <select id="crs" name="crs">
-                <option hidden disabled selected value></option>
-                <option value="9210">Thành phố Hồ Chí Minh</option>
-                <option value="9206">Điện Biên</option>
-                <option value="9205">Lai Châu</option>
-                <option value="9205">Sơn La</option>
-                <option value="9207">Cà Mau</option>
-                <option value="9207">Kiên Giang</option>
-                <option value="9208">An Giang</option>
-                <option value="9208">Lào Cai</option>
-                <option value="9208">Nghệ An</option>
-                <option value="9208">Phú Thọ</option>
-                <option value="9208">Yên Bái</option>
-                <option value="5897">Bạc Liêu</option>
-                <option value="5897">Cần Thơ</option>
-                <option value="5897">Đồng Tháp</option>
-                <option value="5897">Hà Nam</option>
-                <option value="5897">Hà Nội</option>
-                <option value="5898">Hậu Giang</option>
-                <option value="5897">Ninh Bình</option>
-                <option value="5897">Thanh Hoá</option>
-                <option value="5897">Vĩnh Phúc</option>
-                <option value="9209">Bắc Ninh</option>
-                <option value="9209">Hà Giang</option>
-                <option value="9209">Hà Tĩnh</option>
-                <option value="9209">Hải Dương</option>
-                <option value="9209">Nam Định</option>
-                <option value="9209">Sóc Trăng</option>
-                <option value="9209">Tây Ninh</option>
-                <option value="9209">Thái Bình</option>
-                <option value="9209">Hưng Yên</option>
-                <option value="9209">Trà Vinh</option>
-                <option value="9209">Vĩnh Long</option>
-                <option value="9210">Bến Tre</option>
-                <option value="9210">Bình Dương</option>
-                <option value="9210">Cao Bằng</option>
-                <option value="9210">Hải Phòng</option>
-                <option value="9210">Long An</option>
-                <option value="9210">Tiền Giang</option>
-                <option value="9211">Hoà Bình</option>
-                <option value="9211">Quảng Bình</option>
-                <option value="9211">Tuyên Quang</option>
-                <option value="9212">Bình Phước</option>
-                <option value="9212">Quảng Trị</option>
-                <option value="9213">Bắc Kạn</option>
-                <option value="9213">Thái Nguyên</option>
-                <option value="9214">Bắc Giang</option>
-                <option value="9214">Thừa Thiên Huế</option>
-                <option value="9215">Lạng Sơn</option>
-                <option value="9216">Kon Tum</option>
-                <option value="5899">Bà Rịa - Vũng Tàu</option>
-                <option value="5899">Đà Nẵng</option>
-                <option value="5899">Đồng Nai</option>
-                <option value="5899">Lâm Đồng</option>
-                <option value="5899">Quảng Nam</option>
-                <option value="5899">Quảng Ninh</option>
-                <option value="5898">Quảng Ngãi</option>
-                <option value="9217">Bình Định</option>
-                <option value="9217">Khánh Hoà</option>
-                <option value="9217">Ninh Thuận</option>
-                <option value="9218">Phú Yên</option>
-                <option value="9218">Bình Thuận</option>
-                <option value="9218">Đắk Lắk</option>
-                <option value="9218">Đắk Nông</option>
-                <option value="9218">Gia Lai</option>
-            </select>
-        </div> 
+
+        <footer class="page-footer font-small blue pt-4">
+            <div class="footer-copyright text-center py-3">© 2020 Copyright
+              </div>
+        </footer>
+
+
         
-            <input type="submit">
-        </form>
-           
     </body>
+
+    <script>
+
+        // Preview Image before Submission
+        
+        const inpFile = document.getElementById("inpFile");
+        const previewContainer = document.getElementById("imagePreview");
+        const previewImage = previewContainer.querySelector(".image-preview__image");
+        const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
+
+        inpFile.addEventListener("change", function() {
+            const file = this.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                previewDefaultText.style.display = "none";
+                previewImage.style.display = "block";
+
+                reader.addEventListener("load", function() {
+                    previewImage.setAttribute("src", this.result);
+                });
+
+                reader.readAsDataURL(file); 
+
+            } else {
+                previewDefaultText.style.display = null;
+                previewImage.style.display = null;
+                previewImage.setAttribute("src", "");
+            }
+        });
+    </script>
+
 </html>
